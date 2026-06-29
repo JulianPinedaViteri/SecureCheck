@@ -77,10 +77,6 @@ scanner.py prints formatted report
 
 ## Background
 
-## Background
-
-## Background
-
 This project came out of a home lab I built to get more hands on experience with real security tooling. While working on a separate Suricata IDS project I kept seeing the same misconfigurations show up as alerts: Telnet on port 23, FTP brute force on port 21, weak credentials. That got me thinking about catching those issues before deployment rather than detecting them after the fact.
 
 SecureCheck is the result of that. The compliance rules it checks against are directly based on the same vulnerabilities I was detecting with Suricata, just shifted left in the pipeline. Adding scanner.py took it further by removing the manual step entirely. Now it runs on a target machine, collects the real system data automatically, and sends it to the API without any human input needed. The goal was to build something that reflects how security automation actually works, not just a standalone script or API sitting in isolation.
