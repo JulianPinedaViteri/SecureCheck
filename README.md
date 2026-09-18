@@ -69,6 +69,16 @@ scanner.py prints formatted report
 }
 ```
 
+## CI/CD Security Pipeline
+
+Every push and pull request to `main` runs a GitHub Actions workflow ([`.github/workflows/security.yml`](.github/workflows/security.yml)) that:
+
+- Runs [Bandit](https://bandit.readthedocs.io/) against `app.py` for static security analysis
+- Runs [Safety](https://pyup.io/safety/) to check installed dependencies for known vulnerabilities
+- Uploads both results as a `security-reports` build artifact (`bandit-report.json`, `safety-report.json`)
+
+See the [Actions tab](https://github.com/JulianPinedaViteri/SecureCheck/actions) for run history and reports.
+
 ## Tech Stack
 
 - Python 3
